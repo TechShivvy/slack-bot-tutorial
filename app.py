@@ -18,9 +18,10 @@ def say_hw(message, say):
 
 @app.event("message")
 def handle_message(ack, body, say):
-    user_id = body["event"]["user"]
-    channel_id = body["event"]["channel"]
-    text = body["event"]["text"]
+    event = body["event"]
+    user_id = event["user"]
+    channel_id = event["channel"]
+    text = event["text"]
 
     ack()
 
